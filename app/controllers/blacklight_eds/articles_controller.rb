@@ -12,7 +12,5 @@ class BlacklightEds::ArticlesController < BlacklightEds::ApplicationController
 
   before_filter :current_search_session, only: [:all, :index]
 
-  add_show_tools_partial :reuse, partial: 'reuse'
-
   # to override any method in this class, create a new module, and include it in the extended controller class
 end
