@@ -6,6 +6,7 @@ class BlacklightEds::ArticlesController < BlacklightEds::ApplicationController
   include Blacklight::Catalog
   include BlacklightEds::Articles
   include Blacklight::Catalog::SearchContext
+  include Blacklight::DefaultComponentConfiguration
 
   helper_method :search_action_url
   helper_method :path_for_eds_article
@@ -13,9 +14,5 @@ class BlacklightEds::ArticlesController < BlacklightEds::ApplicationController
   before_filter :current_search_session, only: [:all, :index]
 
   # to override any method in this class, create a new module, and include it in the extended controller class
-
-  configure_blacklight_eds do |config|
-    config.add_show_tools_partial(:articles)
-  end
 
 end
